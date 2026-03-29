@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "name": "Prashant Rana",
+    "profileImage": "",
+    "intro": "A passionate Web developer who designs & builds experiences with precision, purpose, and a touch of cultural flair.",
+    "phrases": [
+      "Web Developer",
+      "React Enthusiast",
+      "Full-stack Dev"
+    ],
+    "ctaPrimary": "Download CV",
+    "ctaSecondary": "Contact Me"
+  },
+  "about": {
+    "intro": "I am a full-stack developer with a passion for building modern web applications. I love turning ideas into products and continuously learning new technologies.",
+    "highlights": [
+      "Design and develop responsive web apps",
+      "Strong understanding of JavaScript and React",
+      "Experience with Node.js and MongoDB"
+    ]
+  },
+  "skills": [],
+  "projects": [],
+  "certificates": [],
+  "contact": {
+    "email": "prashant@example.com",
+    "socials": {
+      "github": "",
+      "linkedin": "",
+      "twitter": "",
+      "instagram": ""
+    },
+    "messages": []
+  },
+  "resumeUrl": "/assets/Certificates/Resume.pdf",
+  "stats": {
+    "visits": 3
+  },
+  "visitors": [
+    {
+      "id": "1774453892513",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-25T15:51:32.513Z",
+      "referrer": "http://localhost:5173/"
+    },
+    {
+      "id": "1774453728496",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-25T15:48:48.496Z",
+      "referrer": "http://localhost:5173/"
+    },
+    {
+      "id": "1773683796282",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-16T17:56:36.283Z",
+      "referrer": "http://localhost:5173/"
+    }
+  ]
+}
