@@ -58,6 +58,7 @@ export const ContentProvider = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useContent = () => {
   const ctx = useContext(ContentContext);
   if (!ctx) throw new Error('useContent must be used within ContentProvider');

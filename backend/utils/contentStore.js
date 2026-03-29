@@ -46,7 +46,7 @@ const DEFAULT_CONTENT = {
 async function ensureContentFile() {
   try {
     await fs.access(CONTENT_FILE);
-  } catch (err) {
+  } catch (_) {
     await fs.mkdir(path.dirname(CONTENT_FILE), { recursive: true });
     await fs.writeFile(CONTENT_FILE, JSON.stringify(DEFAULT_CONTENT, null, 2), 'utf8');
   }
@@ -57,7 +57,7 @@ export async function readContent() {
   const file = await fs.readFile(CONTENT_FILE, 'utf8');
   try {
     return JSON.parse(file);
-  } catch (err) {
+  } catch (_) {
     // If JSON is invalid, overwrite with defaults
     await fs.writeFile(CONTENT_FILE, JSON.stringify(DEFAULT_CONTENT, null, 2), 'utf8');
     return DEFAULT_CONTENT;

@@ -2,7 +2,7 @@
   "hero": {
     "name": "Prashant Rana",
     "profileImage": "",
-    "intro": "A passionate Web developer who designs & builds experiences with precision, purpose, and a touch of cultural flair.",
+    "intro": "I'm a software developer passionate about building beautiful experiences.",
     "phrases": [
       "Web Developer",
       "React Enthusiast",
@@ -23,7 +23,7 @@
   "projects": [],
   "certificates": [],
   "contact": {
-    "email": "prashant@example.com",
+    "email": "dev.prashantrana@gmail.com",
     "socials": {
       "github": "",
       "linkedin": "",
@@ -34,29 +34,36 @@
   },
   "resumeUrl": "/assets/Certificates/Resume.pdf",
   "stats": {
-    "visits": 3
+    "visits": 4
   },
   "visitors": [
     {
-      "id": "1774453892513",
+      "id": "1774804205304",
       "ip": "::1",
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
-      "timestamp": "2026-03-25T15:51:32.513Z",
-      "referrer": "http://localhost:5173/"
+      "timestamp": "2026-03-29T17:10:05.304Z",
+      "referrer": "http://localhost:5175/"
     },
     {
-      "id": "1774453728496",
+      "id": "1774804205234",
       "ip": "::1",
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
-      "timestamp": "2026-03-25T15:48:48.496Z",
-      "referrer": "http://localhost:5173/"
+      "timestamp": "2026-03-29T17:10:05.236Z",
+      "referrer": "http://localhost:5175/"
     },
     {
-      "id": "1773683796282",
+      "id": "1774804192674",
       "ip": "::1",
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
-      "timestamp": "2026-03-16T17:56:36.283Z",
-      "referrer": "http://localhost:5173/"
+      "timestamp": "2026-03-29T17:09:52.674Z",
+      "referrer": "http://localhost:5175/"
+    },
+    {
+      "id": "1774804145726",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-29T17:09:05.727Z",
+      "referrer": "http://localhost:5175/"
     }
   ]
 }

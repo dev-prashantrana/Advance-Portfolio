@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useContent } from '../context/ContentContext';
 
 const Hero = () => {
@@ -6,7 +6,7 @@ const Hero = () => {
   const name = content?.hero?.name || 'Prashant Rana';
   const intro = content?.hero?.intro || "I'm a software developer passionate about building beautiful experiences.";
   const profileImage = content?.hero?.profileImage || '/assets/Prashant-Rana.png';
-  const phrases = content?.hero?.phrases || ['a Web Developer', 'a Software Developer', 'a UI/UX Designer'];
+  const phrases = useMemo(() => content?.hero?.phrases || ['a Web Developer', 'a Software Developer', 'a UI/UX Designer'], [content?.hero?.phrases]);
   const [currentText, setCurrentText] = useState('');
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);

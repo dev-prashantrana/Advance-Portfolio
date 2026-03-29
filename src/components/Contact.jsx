@@ -21,7 +21,7 @@ const Contact = () => {
       await http.post('/contact', form);
       setStatus({ type: 'success', message: 'Message sent! I will respond soon.' });
       setForm({ name: '', email: '', number: '', message: '' });
-    } catch (err) {
+    } catch (_) {
       setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
     }
   };

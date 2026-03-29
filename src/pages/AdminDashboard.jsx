@@ -1,18 +1,18 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useContent } from '../context/ContentContext';
+// eslint-disable-next-line no-unused-vars
 import http from '../api/http';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
 
 const AdminDashboard = () => {
+  // eslint-disable-next-line no-unused-vars
   const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
   const { content, loading, error, reload, update } = useContent();
   const [view, setView] = useState('hero');
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState(null);
-
-  const token = localStorage.getItem('admin_token');
-  if (!token) return <Navigate to="/admin/login" replace />;
 
   const section = useMemo(() => {
     if (!content) return null;
@@ -70,112 +70,6 @@ const AdminDashboard = () => {
     setCertificates(content.certificates || []);
   }, [section, content]);
 
-  const logout = () => {
-    localStorage.removeItem('admin_token');
-    navigate('/admin/login');
-  };
-
-  const uploadFile = async (file) => {
-    const formData = new FormData();
-    formData.append('file', file);
-    const res = await http.post('/content/upload', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
-    return res.data.url;
-  };
-
-  const handleFileChange = async (setter, file) => {
-    if (!file) return;
-    try {
-      const url = await uploadFile(file);
-      setter(url);
-    } catch (err) {
-      alert('Failed to upload file');
-    }
-  };
-
-  const handleChange = (key) => (e) => setForm((prev) => ({ ...prev, [key]: e.target.value }));
-
-  const handleSave = async () => {
-    setSaveError(null);
-    setSaving(true);
-
-    try {
-      await update({
-        ...content,
-        hero: {
-          ...content.hero,
-          name: form.name,
-          profileImage: form.profileImage,
-          intro: form.intro,
-          phrases: form.phrases.split(',').map((p) => p.trim()).filter(Boolean),
-        },
-        resumeUrl: form.resumeUrl,
-        about: {
-          ...content.about,
-          intro: form.aboutIntro,
-        },
-        skills,
-        projects,
-        certificates,
-        contact: {
-          ...content.contact,
-          email: form.email,
-          socials: {
-            github: form.github,
-            linkedin: form.linkedin,
-            twitter: form.twitter,
-            instagram: form.instagram,
-          },
-        },
-      });
-      alert('Content saved successfully.');
-    } catch (err) {
-      setSaveError(err.message || 'Unable to save');
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const deleteMessage = async (messageId) => {
-    if (!window.confirm('Delete this message?')) return;
-    setSaving(true);
-    try {
-      await http.delete(`/content/messages/${messageId}`);
-      await reload();
-    } catch (err) {
-      setSaveError(err.message || 'Unable to delete message');
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const clearMessages = async () => {
-    if (!window.confirm('Clear all messages?')) return;
-    setSaving(true);
-    try {
-      await http.post('/content/messages/clear');
-      await reload();
-    } catch (err) {
-      setSaveError(err.message || 'Unable to clear messages');
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const resetVisits = async () => {
-    if (!window.confirm('Reset the visit counter to 0?')) return;
-    setSaving(true);
-    try {
-      await http.post('/content/stats/reset');
-      await reload();
-    } catch (err) {
-      setSaveError(err.message || 'Unable to reset visits');
-    } finally {
-      setSaving(false);
-    }
-  };
-
   const chartData = useMemo(() => {
     const visitsByDay = {};
     const messagesByDay = {};
@@ -212,6 +106,9 @@ const AdminDashboard = () => {
     });
     return Object.entries(devices).map(([name, value]) => ({ name, value }));
   }, [section]);
+
+  const token = localStorage.getItem('admin_token');
+  if (!token) return <Navigate to="/admin/login" replace />;
   const updateSkill = (index, key, value) => {
     const newSkills = [...skills];
     newSkills[index][key] = value;
